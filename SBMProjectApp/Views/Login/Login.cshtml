@@ -1,0 +1,147 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="~/Content/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/Content/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="~/Content/vendors/iconfonts/simple-line-icon/css/simple-line-icons.css">
+    <link rel="stylesheet" href="~/Content/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="~/Content/vendors/css/vendor.bundle.addons.css">
+    <link href="~/Content/vendors/iconfonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css" rel="stylesheet" />
+    <!-- plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="~/Content/css/style.css">
+</head>
+<body>
+@*<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+
+
+        <div class="card">
+            <h4 class="card-header">Login</h4>
+
+            <div class="card-body">
+
+                <form id="form" data-toggle="validator" role="form" method="post" action="Login">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="exampleInputName" class="bmd-label-floating">User Name</label>
+                                <input type="text" class="form-control" id="exampleInputName" name="UserName" data-parsley-trigger="UserName" required>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="Password" class="bmd-label-floating">Password</label>
+                                <input data-minlength="8" name="Password" id="Password" type="password" class="form-control" data-parsley-trigger="Password" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="checkbox checkbox-primary">
+                            <input id="checkbox_remember" type="checkbox" name="remember">
+                            <label for="checkbox_remember"> Remember me</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="hidden" name="redirect" value="" />
+                            <input type="submit" class="btn btn-primary btn-lg btn-block" value="Login" name="submit" />
+                        </div>
+                    </div>
+                </form>
+                <div class="clear"></div>
+
+                <i class="fa fa-user fa-fw"></i> No account yet? <a href="@Url.Action("Register", "Login")">Register new account</a>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>*@
+    <div class="container-scroller">
+        <div class="container-fluid page-body-wrapper full-page-wrapper">
+            <div class="content-wrapper auth p-0 theme-two">
+                <div class="row d-flex align-items-stretch">
+                    <div class="col-md-4 banner-section d-none d-md-flex align-items-stretch justify-content-center">
+                        <div class="slide-content bg-1">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-8 h-100 bg-white">
+                        <div class="auto-form-wrapper d-flex align-items-center justify-content-center flex-column">
+                            <div class="nav-get-started">
+                                <p>Don't have an account?</p>
+                                <a class="btn get-started-btn" href="@Url.Action("Register", "Login")">Register</a>
+                            </div>
+                            <form action="#" method="post">
+                                <h3 class="mr-auto">Hello! let's get started</h3>
+                                <p class="mb-5 mr-auto">Enter your details below.</p>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="mdi mdi-account-outline"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" name="UserName" placeholder="UserName">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="mdi mdi-lock-outline"></i></span>
+                                        </div>
+                                        <input type="password" class="form-control" name="Password" placeholder="Password">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-primary submit-btn" type="submit" value="Login" name="submit">SIGN IN</button>
+                                </div>
+                                <div class="wrapper mt-5 text-gray">
+                                    <p class="footer-text">Copyright © 2019 SBM. All rights reserved.</p>
+                                    <ul class="auth-footer text-gray">
+                                        <li><a href="#">Terms & Conditions</a></li>
+                                        <li><a href="#">Cookie Policy</a></li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+
+    <!-- plugins:js -->
+    <script src="~/Content/vendors/js/vendor.bundle.base.js"></script>
+    <script src="~/Content/vendors/js/vendor.bundle.addons.js"></script>
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="~/Content/js/off-canvas.js"></script>
+    <script src="~/Content/js/hoverable-collapse.js"></script>
+    <script src="~/Content/js/misc.js"></script>
+    <script src="~/Content/js/settings.js"></script>
+    <script src="~/Content/js/todolist.js"></script>
+    <script>
+        $(document).ready(function ($) {
+            // Hide Loader
+            $("#loading").hide();
+
+    </script>
+</body>
+</html>

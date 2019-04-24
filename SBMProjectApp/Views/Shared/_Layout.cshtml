@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="shortcut icon" href="~/Content/images/favicon.png" />
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="~/Content/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/Content/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="~/Content/vendors/iconfonts/simple-line-icon/css/simple-line-icons.css">
+    <link rel="stylesheet" href="~/Content/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="~/Content/vendors/css/vendor.bundle.addons.css">
+    <link href="~/Content/vendors/iconfonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css" rel="stylesheet" />
+    <!-- plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <!-- endinject -->
+    @RenderSection("section_top", required: false)
+</head>
+<body>
+
+
+    <div class="container-scroller">
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+                <a class="navbar-brand brand-logo" href="@Url.Action("Dashboard", "Login", null)">
+                    <img src="~/Content/images/logo.svg" alt="logo" />
+                </a>
+                <a class="navbar-brand brand-logo-mini" href="#">
+                    <img src="~/Content/images/logo-mini.svg" alt="logo" />
+                </a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="mdi mdi-menu"></span>
+                </button>
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
+                        <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                            <div class="dropdown-toggle-wrapper">
+                                <div class="inner">
+                                    <img class="img-xs rounded-circle" src="~/Content/images/faces/face1.jpg" alt="Profile image">
+                                </div>
+                                <div class="inner">
+                                    <div class="inner">
+                                        <small class="profile-text small">Admin</small>
+                                    </div>
+                                    <div class="inner">
+                                        <div class="icon-wrapper">
+                                            <i class="mdi mdi-chevron-down"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                            <a class="dropdown-item p-0">
+                                <div class="d-flex border-bottom">
+                                    <div class="py-3 px-4 d-flex align-items-center justify-content-center">
+                                        <i class="mdi mdi-bookmark-plus-outline mr-0 text-gray"></i>
+                                    </div>
+                                    <div class="py-3 px-4 d-flex align-items-center justify-content-center border-left border-right">
+                                        <i class="mdi mdi-account-outline mr-0 text-gray"></i>
+                                    </div>
+                                    <div class="py-3 px-4 d-flex align-items-center justify-content-center">
+                                        <i class="mdi mdi-alarm-check mr-0 text-gray"></i>
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item mt-2">
+                                Manage Accounts
+                            </a>
+                            <a class="dropdown-item">
+                                Change Password
+                            </a>
+                            <a class="dropdown-item">
+                                Check Inbox
+                            </a>
+                            <a class="dropdown-item" id="logout">
+                                Sign Out
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_settings-panel.html -->
+            <div class="theme-setting-wrapper">
+                <div id="theme-settings" class="settings-panel">
+                    <i class="settings-close mdi mdi-close"></i>
+                    <div class="d-flex align-items-center justify-content-between border-bottom">
+                        <p class="settings-heading font-weight-bold border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0">Template Skins</p>
+                    </div>
+                    <div class="sidebar-bg-options" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>
+                    <div class="sidebar-bg-options selected" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark</div>
+                    <p class="settings-heading font-weight-bold mt-2">Header Skins</p>
+                    <div class="color-tiles mx-0 px-4">
+                        <div class="tiles primary"></div>
+                        <div class="tiles success"></div>
+                        <div class="tiles warning"></div>
+                        <div class="tiles danger"></div>
+                        <div class="tiles pink"></div>
+                        <div class="tiles info"></div>
+                        <div class="tiles dark"></div>
+                        <div class="tiles default"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- partial -->
+            <!-- partial:partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas sidebar-dark" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item nav-profile">
+                        <img src="~/Content/images/faces/face1.jpg" alt="profile image">
+                        <p class="text-center font-weight-medium">Hamidur Rahaman</p>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Dashboard", "Login", null)">
+                            <i class="menu-icon icon-diamond"></i>
+                            <span class="menu-title">Dashboard</span>
+                        </a>
+                    </li>
+                    @*<li class="nav-item d-none d-md-block">
+                            <a class="nav-link" data-toggle="collapse" href="#page-layouts" aria-expanded="false" aria-controls="page-layouts">
+                                <i class="menu-icon icon-compass"></i>
+                                <span class="menu-title">Page Layouts</span>
+                            </a>
+                            <div class="collapse" id="page-layouts">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="pages/layout/boxed-layout.html">Boxed</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="pages/layout/rtl-layout.html">RTL</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="pages/layout/horizontal-menu.html">Horizontal Menu</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="pages/layout/horizontal-menu-2.html">Horizontal Menu 2</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>*@
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("PurchaseList", "Purchase", null)">
+                            <i class="menu-icon icon-diamond"></i>
+                            <span class="menu-title">Purchase</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("SalesList", "Sales", null)">
+                            <i class="menu-icon icon-diamond"></i>
+                            <span class="menu-title">Sales</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#apps-dropdown" aria-expanded="false" aria-controls="apps-dropdown">
+                            <i class="menu-icon icon-settings"></i>
+                            <span class="menu-title">Settings</span>
+                            <div class="badge badge-info">
+                                <div class="icon-wrapper">
+                                    <i class="mdi mdi-chevron-down"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="collapse" id="apps-dropdown">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("CustomerList", "Customer", null)">Customer</a>
+                                    @*@Html.ActionLink("Customer", "CustomerList", "Customer", null, new { @class = "nav-link" })*@
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("SupplierList", "Supplier", null)">Supplier</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("CategoryList", "Category", null)">Category</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("ProductList", "Product", null)">Product</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row mb-4">
+                        <div class="col-12 d-flex align-items-center justify-content-between">
+                            @{
+                                if (ViewBag.CallingForm1 == "index")
+                                {
+
+                                }
+                                else
+                                {
+
+
+                                    <h4 class="page-title">@ViewBag.CallingForm</h4>
+
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="#">@ViewBag.CallingForm</a></li>
+                                            <li class="breadcrumb-item active"><a href="@ViewBag.CallingViewPage">@ViewBag.CallingForm1</a></li>
+                                            @if (@ViewBag.CallingForm2 != null)
+                                            {
+                                                <li class="breadcrumb-item active" aria-current="page"><a href="#">@ViewBag.CallingForm2</a></li>
+                                            }
+                                        </ol>
+                                    </nav>
+                                }
+
+                            }
+                        </div>
+                    </div>
+                    <div id="loading">
+                        <img id="imagen" src="~/Content/admin/assets/images/progress/progress-circle-success.svg" alt="Loading..." />
+                        <div id="timer">Timer</div>
+                    </div>
+                    @RenderBody()
+                    <hr />
+                    <footer>
+                        <p>&copy; @DateTime.Now.Year - Small Business Management</p>
+                    </footer>
+                </div>
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- plugins:js -->
+    <script src="~/Content/vendors/js/vendor.bundle.base.js"></script>
+    <script src="~/Content/vendors/js/vendor.bundle.addons.js"></script>
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="~/Content/js/off-canvas.js"></script>
+    <script src="~/Content/js/hoverable-collapse.js"></script>
+    <script src="~/Content/js/misc.js"></script>
+    <script src="~/Content/js/settings.js"></script>
+    <script src="~/Content/js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="~/Content/js/dashboard.js"></script>
+    <!-- End custom js for this page-->
+    @RenderSection("section_footer", required: false)
+
+    <script>
+        $(document).ready(function ($) {
+            // Hide Loader
+            $("#loading").hide();
+
+            //Logout Information
+            $("#logout").click(function () {
+                $.ajax({
+                    url: '/Login/LogOut/',
+                    dataType: "json",
+                    type: "POST",
+                    contentType: 'application/json; charset=utf-8',
+                    async: false,
+                    processData: false,
+                    cache: false,
+                    success: function (data) {
+                        if (data.isCompleted == true) {
+                            window.location.href = '/Login/Login/';
+                        }
+                    },
+                    error: function (xhr) {
+                        ShowOpMessage("Sign Out", false, "");
+                    }
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
